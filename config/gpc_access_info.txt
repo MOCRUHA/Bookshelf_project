@@ -1,0 +1,10 @@
+conta do gpc:
+polyoma.proj
+
+senha:
+efedrin4
+
+
+login:
+drive-access@bookshelf-420000.iam.gserviceaccount.com
+
