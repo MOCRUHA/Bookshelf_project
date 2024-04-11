@@ -11,4 +11,6 @@ def img_to_code(path):
 
     return decoded_info[0] #select only the isbn number
 
+x = r"C:\Users\gusta\OneDrive\Imagens\bcd01.jpg"
+print(img_to_code(x))
 
