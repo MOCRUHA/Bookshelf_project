@@ -1,8 +1,11 @@
 #Project Tasks (in no particular order)
 
--create function to read image and return isbn code
--create funtion to search isbn number an return book data (some API?)
--find where to submit images to be accessed by program
--create and model database for books
--create function to connect isbn data to database
+-create function to read image and return isbn code.
+-create funtion to search isbn number an return book data (some API?).
+-find where to submit images to be accessed by program.
+-create and model database for books.
+-create function to connect isbn data to database.
+-take every image uploaded and rename in a sqeuency manner.
+-setup docker for running main app.
+-setup docker for database running.
 -
