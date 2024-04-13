@@ -1,3 +1,5 @@
 config/
 data/
 project_tasks
+src/Dokerfile
+src/.dockerignore
