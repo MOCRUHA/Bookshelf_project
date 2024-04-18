@@ -1,0 +1,10 @@
+services:
+
+  mysql:
+    build: mysql
+    restart: always
+    enviroment:
+      MYSQL_DATABASE: 'bookshelf'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'

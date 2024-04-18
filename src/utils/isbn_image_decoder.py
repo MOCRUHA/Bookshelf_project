@@ -1,5 +1,8 @@
+import cv2
 
 def img_to_code(path):
+
+
 
     img = cv2.imread(path) #read image from source
 

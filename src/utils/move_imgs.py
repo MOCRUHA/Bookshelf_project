@@ -1,9 +1,12 @@
 #move images from storage dir to work dir
-
 import os
+import shutil
+
 
 
 def move_img(src, dst):
+	
+
 	#list all images
 	imlist = os.listdir(src)
 
@@ -12,7 +15,7 @@ def move_img(src, dst):
 	for image in imlist:
 		src_path = os.path.join(src, f'{image}')
 		dst_path = os.path.join(dst, f'bc_{num}.jpg')
-		os.rename(src_path, dst_path)
+		shutil.copy(src_path, dst_path)
 		num+=1
 
 

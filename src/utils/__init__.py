@@ -1,1 +1,1 @@
-__all__ = ["move_imgs", "isbn_image_decoder"]
+#__all__ = ["move_imgs", "isbn_image_decoder", "inject_db", "api_isbn"]
