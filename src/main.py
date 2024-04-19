@@ -12,8 +12,8 @@ from utils import move_imgs, isbn_image_decoder, inject_db, api_isbn
 
 
 #dir where imgs are kept
-DIR = r'C:\Users\gusta\Documents\OG'
-USE_DIR = r'C:\Users\gusta\Documents\USE'
+DIR = r'/home/polyoma/Dropbox/mobile_imgs'
+USE_DIR = r'/home/polyoma/Bookshelf_project/use_dir'
 
 #copy and rename imgs to use dir
 move_imgs.move_img(DIR, USE_DIR)

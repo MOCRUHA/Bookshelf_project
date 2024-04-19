@@ -5,6 +5,6 @@ services:
     restart: always
     enviroment:
       MYSQL_DATABASE: 'bookshelf'
-      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'hell'
     ports:
       - '3306:3306'
