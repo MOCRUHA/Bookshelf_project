@@ -1,14 +1,9 @@
 import cv2
 
+from pyzbar.pyzbar import decode
+
 def img_to_code(path):
 
+    dec = decode(cv2.imread(f'{path}'))
 
-
-    img = cv2.imread(path) #read image from source
-
-    bd = cv2.barcode.BarcodeDetector() #run de detector e decode isbn
-
-    decoded_info = bd.detectAndDecode(img) #save isbn decode as tuple
-
-    return decoded_info[0] #select only the isbn number
-
+    return (dec[0].data.decode())

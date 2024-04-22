@@ -7,7 +7,10 @@ CREATE TABLE books(
 	pages INT,
 	year INT,
 	publisher VARCHAR(255),
-	author VARCHAR(255),
+	author1 VARCHAR(255),
+	author2 VARCHAR(255),
+	author3 VARCHAR(255),
+	author4 VARCHAR(255),
 	PRIMARY KEY (isbn)
 
 );

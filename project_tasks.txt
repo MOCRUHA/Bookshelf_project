@@ -9,3 +9,9 @@
 -setup docker for running main app.
 -setup docker for database running.
 -
+
+
+
+*fix author returning list from json
+*add a table to db with isbn to avoid repeating entries
+*creeate ruotines for manual execution for syncing and showing the bookshelf

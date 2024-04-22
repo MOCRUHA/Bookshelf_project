@@ -16,11 +16,14 @@ def data_to_db(list_val):
 	sql = "INSERT INTO books (isbn,\
 							 title,\
 							 subtitle,\
-							 authors,\
+							 author1,\
+							 author2,\
+							 author3,\
+							 author4,\
 							 publisher,\
 							 year,\
 							 page_count\
-							 ) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+							 ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
 
 	print(list_val)

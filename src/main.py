@@ -22,7 +22,8 @@ move_imgs.move_img(DIR, USE_DIR)
 ISBN = []
 
 for image in os.listdir(USE_DIR):
-	img = f'{USE_DIR}\\{image}'
+	img = f'{USE_DIR}/{image}'
+
 
 	ISBN.append(isbn_image_decoder.img_to_code(img))
 
