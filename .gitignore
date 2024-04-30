@@ -4,3 +4,4 @@ project_tasks
 src/Dockerfile
 src/.dockerignore
 use_dir
+__pycache__

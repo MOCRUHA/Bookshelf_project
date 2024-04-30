@@ -13,3 +13,5 @@ CREATE TABLE books(
 
 );
 
+-- INSERT INTO books(isbn, title) VALUES (1211234, 'gjesus');
+

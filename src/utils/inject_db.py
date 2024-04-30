@@ -1,49 +1,55 @@
+import mysql.connector
 
+#list_val should be a dict
 
 def data_to_db(list_val):
 
-	import mysql.connector
+#connect with mysql database
 	
 	mydb = mysql.connector.connect(
 	  host="localhost",
 	  password="hell",
 	  user='root',
-	  database="bookshelf"
+	  database="bookshelf",
+	  port=3306
 	)
 	
 	mycursor = mydb.cursor()
 
+#values to be inserted into database
+	cols = ['isbn','title','subtitle','authors','publisher','year','page_count']
 
-	list_val['first_author'], *list_val['other_authors'] = list_val['authors']
-	list_val['other_authors'] = str(list_val['other_authors']).replace('[', '').replace(']', '0')
-	
+	val =  {'isbn': '',
+			'title': '',
+			'subtitle': '',
+			'authors': '',
+			'publisher': '',
+			'year': '',
+			'pages': '0'}
 
-	cols = ['isbn','title','subtitle','first_author', 'other_authors','publisher','year','page_count']
+
+#create a dict with wanted data from list_val AND split authors into two columns then removing it
 
 	for field in cols:
-		if field not in list_val.keys():
-			list_val[field]='0'
-
-	print(list_val)
-
-	vals = ', '.join(['%('+ str(list_val[item]) +')s' for item in cols])
+		if field == 'authors':
+			val['first_author'], *val['other_authors'] = list_val['authors']
+			val['other_authors'] = str(val['other_authors']).replace('[', '').replace(']', '')
+		if field in list_val.keys():
+			val[field]=list_val[field]
+	del val['authors']
+	
+#SQL commands for inserting data into books table
+	sql = ("INSERT INTO books "
+              "(isbn, title, subtitle, first_author,\
+				  other_authors, publisher, year, pages) "
+              "VALUES (%(isbn)s, %(title)s, %(subtitle)s, %(first_author)s,\
+				  %(other_authors)s, %(publisher)s, %(year)s, %(pages)s)")
+	
 	
 
-	sql = f"INSERT INTO books ({cols}) VALUES ({vals})"
-
-	print('-------------------')
-	print(type(vals))
-	print('-------------------')
-
-	print('AAAAAAAA')
-	print(cols)
-	
-
-	vals = vals.split(', ')
-
-	print('BBBBBBBB')
-	print(vals)
-
-	mycursor.execute(sql, vals)
+	mycursor.execute(sql, val)
 	mydb.commit()
 	print(mycursor.rowcount, "record inserted.")
+
+
+
