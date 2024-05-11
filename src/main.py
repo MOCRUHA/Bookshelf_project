@@ -12,8 +12,8 @@ def main():
 
 
 	#dir where imgs are kept
-	DIR = r'/home/polyoma/Dropbox/mobile_imgs'
-	USE_DIR = r'/home/polyoma/Bookshelf_project/use_dir'
+	DIR = r'/home/poly/Dropbox/mobile_imgs'
+	USE_DIR = r'/home/poly/gitRepos/Bookshelf_project/use_dir'
 
 	#copy and rename imgs to use dir
 	move_imgs.move_img(DIR, USE_DIR)
@@ -26,7 +26,7 @@ def main():
 		try:
 			ISBN.append(isbn_image_decoder.img_to_code(img))
 		except Exception:
-			print(Exception)
+			print('decodingError')
 			pass
 
 	with open('isbns.txt', 'w') as f:
@@ -39,7 +39,7 @@ def main():
 		try:
 			inject_db.data_to_db(api_isbn.isbn_api_call(id))
 		except Exception:
-			print(Exception)
+			print('injectError')
 			pass
 
 

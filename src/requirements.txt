@@ -1,0 +1,5 @@
+opencv-contrib-python
+requests
+mysql-connector-python
+pyzbar
+schedule
