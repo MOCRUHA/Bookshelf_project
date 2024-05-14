@@ -1,0 +1,10 @@
+certifi==2024.2.2
+charset-normalizer==3.3.2
+idna==3.7
+mysql-connector-python==8.4.0
+numpy==1.26.4
+opencv-contrib-python==4.9.0.80
+pyzbar==0.1.9
+requests==2.31.0
+schedule==1.2.1
+urllib3==2.2.1
