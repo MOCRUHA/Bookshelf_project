@@ -25,7 +25,7 @@ def add_book(list_val):
 
 #connect with mysql database	
 	cnx = mysql.connector.connect(
-	  host='localhost',
+	  host='192.168.15.162',
 	  password="hell",
 	  user='root',
 	  database="bookshelfdb",

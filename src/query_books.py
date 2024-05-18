@@ -1,30 +1,33 @@
 
-
-import streamlit
+import os
+import streamlit as st
 import mysql.connector
+import pandas as pd
 
 #query database books
 def qry_books():
 	
-#connect with mysql database	
-    cnx = mysql.connector.connect(
-	  host='192.168.15.162',
-	  password="hell",
-	  user='root',
-	  database="bookshelfdb",
-	  port=3306
-	)
-	
-    cursor = cnx.cursor()
+#connect with mysql database
+    try:
+        cnx = mysql.connector.connect(
+            host='192.168.15.162',
+            password="hell",
+            user='root',
+            database="bookshelfdb",
+            port=3306
+        )
 
-#connection status message
-    if (cnx.is_connected()):
-        print("Connected")
-    else:
-        print("Not connected")
+        query = ('SELECT * FROM books')
 
-    query = ('SELECT * FROM books')
+        query_books = pd.read_sql(query, cnx)
 
-    cursor.execute(query)
-    cursor.close()
-    cnx.close()
+        st.table(query_books)
+
+    except Exception as e:
+        cnx.close()
+        print(str(e))
+    
+    
+    
+if __name__ == '__main__':
+    qry_books()
